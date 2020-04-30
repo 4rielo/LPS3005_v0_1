@@ -82,6 +82,8 @@
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
 
+DAC_HandleTypeDef hdac;
+
 SPI_HandleTypeDef hspi1;
 
 TIM_HandleTypeDef htim1;
@@ -481,6 +483,7 @@ static void MX_TIM16_Init(void);
 static void MX_TIM17_Init(void);
 static void MX_TIM15_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_DAC_Init(void);
 /* USER CODE BEGIN PFP */
 
 void Refresh_digits(void);
@@ -675,6 +678,7 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_TIM15_Init();
   MX_USART2_UART_Init();
+  MX_DAC_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -1091,6 +1095,44 @@ static void MX_ADC_Init(void)
 }
 
 /**
+  * @brief DAC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_DAC_Init(void)
+{
+
+  /* USER CODE BEGIN DAC_Init 0 */
+
+  /* USER CODE END DAC_Init 0 */
+
+  DAC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN DAC_Init 1 */
+
+  /* USER CODE END DAC_Init 1 */
+  /** DAC Initialization 
+  */
+  hdac.Instance = DAC;
+  if (HAL_DAC_Init(&hdac) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** DAC channel OUT1 config 
+  */
+  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
+  if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN DAC_Init 2 */
+
+  /* USER CODE END DAC_Init 2 */
+
+}
+
+/**
   * @brief SPI1 Initialization Function
   * @param None
   * @retval None
@@ -1306,8 +1348,6 @@ static void MX_TIM14_Init(void)
 
   /* USER CODE END TIM14_Init 0 */
 
-  TIM_OC_InitTypeDef sConfigOC = {0};
-
   /* USER CODE BEGIN TIM14_Init 1 */
 
   /* USER CODE END TIM14_Init 1 */
@@ -1321,22 +1361,9 @@ static void MX_TIM14_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_Init(&htim14) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_ENABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim14, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM14_Init 2 */
 
   /* USER CODE END TIM14_Init 2 */
-  HAL_TIM_MspPostInit(&htim14);
 
 }
 

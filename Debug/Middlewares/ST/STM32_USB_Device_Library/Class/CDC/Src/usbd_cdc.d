@@ -25,6 +25,8 @@ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o: \
  /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h \
  /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h \
  /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h \
+ /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac.h \
+ /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac_ex.h \
  /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h \
  /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h \
  /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h \
@@ -95,6 +97,10 @@ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o: \
 /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h:
 
 /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h:
+
+/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac.h:
+
+/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac_ex.h:
 
 /home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h:
 

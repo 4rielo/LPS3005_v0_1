@@ -8,6 +8,8 @@ C_SRCS += \
 ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c \
 ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c \
 ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c \
+../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac.c \
+../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac_ex.c \
 ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c \
 ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c \
 ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c \
@@ -32,6 +34,8 @@ OBJS += \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o \
+./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac.o \
+./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac_ex.o \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o \
@@ -56,6 +60,8 @@ C_DEPS += \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.d \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.d \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.d \
+./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac.d \
+./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac_ex.d \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.d \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.d \
 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.d \
@@ -81,7 +87,7 @@ Drivers/STM32F0xx_HAL_Driver/Src/%.o: ../Drivers/STM32F0xx_HAL_Driver/Src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo $(PWD)
-	arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DUSE_HAL_DRIVER -DSTM32F072xB -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/CMSIS/Device/ST/STM32F0xx/Include" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/CMSIS/Include"  -O1 -g -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DUSE_HAL_DRIVER -DSTM32F072xB -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/CMSIS/Device/ST/STM32F0xx/Include" -I"/home/arielo/STM32_Workspace/LPS3005_fv0_1/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
